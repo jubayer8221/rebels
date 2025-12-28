@@ -51,7 +51,7 @@ const ShopPage = () => {
       </Typography>
       <Grid container spacing={4} sx={{ mb: 6 }}>
         {CATEGORIES.map((cat) => (
-          <Grid item xs={12} sm={6} md={3} key={cat.id}>
+          <Grid key={cat.id}>
             <Link href={cat.path}>
               <Box
                 sx={{
@@ -98,7 +98,7 @@ const ShopPage = () => {
       </Typography>
       <Grid container spacing={4}>
         {PRODUCTS.map((prod) => (
-          <Grid item xs={12} sm={6} md={3} key={prod.id}>
+          <Grid key={prod.id}>
             <Card sx={{ borderRadius: 2, overflow: "hidden" }}>
               <CardMedia
                 component="img"
