@@ -13,7 +13,7 @@ const CategorySection = () => {
 
       <Grid container spacing={3}>
         {CATEGORIES.map((cat) => (
-          <Grid item xs={6} md={3} key={cat.id}>
+          <Grid key={cat.id}>
             <Box sx={{ position: "relative", cursor: "pointer" }}>
               <Image
                 src={cat.image}

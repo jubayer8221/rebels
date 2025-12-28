@@ -2,26 +2,21 @@
 
 import {
   Box,
-  Grid,
   Typography,
   Link as MuiLink,
   IconButton,
+  Grid,
 } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-// import {
-//   QUICK_LINKS,
-//   SUPPORT_LINKS,
-//   SOCIAL_LINKS,
-// } from "@/config/footer.config";
-import Image from "next/image";
-import Link from "next/link";
 import {
   QUICK_LINKS,
   SOCIAL_LINKS,
   SUPPORT_LINKS,
 } from "../../config/footer.config";
+import Image from "next/image";
+import Link from "next/link";
 import { JSX } from "react";
 
 const socialIconMap: Record<string, JSX.Element> = {
@@ -35,7 +30,7 @@ const Footer = () => {
     <Box sx={{ bgcolor: "#111", color: "#fff", pt: 6, pb: 4 }}>
       <Grid container spacing={4} sx={{ px: { xs: 2, md: 8 } }}>
         {/* Brand */}
-        <Grid xs={12} md={3}>
+        <Grid>
           <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
             <Image
               src="/image/rebels-logo.png"
@@ -55,7 +50,7 @@ const Footer = () => {
         </Grid>
 
         {/* Quick Links */}
-        <Grid xs={6} md={3}>
+        <Grid>
           <Typography variant="subtitle1" fontWeight={600} mb={2}>
             Quick Links
           </Typography>
@@ -74,7 +69,7 @@ const Footer = () => {
         </Grid>
 
         {/* Support */}
-        <Grid xs={6} md={3}>
+        <Grid>
           <Typography variant="subtitle1" fontWeight={600} mb={2}>
             Support
           </Typography>
@@ -93,7 +88,7 @@ const Footer = () => {
         </Grid>
 
         {/* Social Media */}
-        <Grid xs={12} md={3}>
+        <Grid>
           <Typography variant="subtitle1" fontWeight={600} mb={2}>
             Follow Us
           </Typography>

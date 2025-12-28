@@ -46,18 +46,13 @@ const BrandInfo = () => {
       <Typography variant="h4" component="h2" align="center" gutterBottom>
         Our Brands
       </Typography>
-      <Typography
-        variant="body1"
-        align="center"
-        color="text.secondary"
-        paragraph
-      >
+      <Typography variant="body1" align="center" color="text.secondary">
         Discover our curated collection of brands
       </Typography>
 
       <Grid container spacing={4} sx={{ mt: 4 }}>
         {brands.map((brand) => (
-          <Grid item xs={12} sm={6} md={4} key={brand.id}>
+          <Grid key={brand.id}>
             <Card
               sx={{ height: "100%", display: "flex", flexDirection: "column" }}
             >
