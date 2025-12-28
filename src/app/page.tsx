@@ -1,6 +1,4 @@
 "use client";
-
-import { Button, Typography } from "@mui/material";
 // import Navbar from "../components/layout/Navbar";
 import HeroSection from "../components/home/HeroSection";
 import CategorySection from "../components/home/CategorySection";
@@ -13,10 +11,6 @@ export default function Home() {
       <HeroSection />
       <CategorySection />
       <BrandInfo />
-      <Typography variant="h4">MUI Installed Successfully</Typography>
-      <Button variant="contained" color="primary">
-        Click Me
-      </Button>
     </>
   );
 }

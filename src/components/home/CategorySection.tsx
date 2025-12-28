@@ -13,14 +13,14 @@ const CategorySection = () => {
 
       <Grid container spacing={3}>
         {CATEGORIES.map((cat) => (
-          <Grid key={cat.id}>
+          <Grid key={cat.id} sx={{ border: 1, borderRadius: 2, p: 1 }}>
             <Box sx={{ position: "relative", cursor: "pointer" }}>
               <Image
                 src={cat.image}
                 alt={cat.title}
                 width={300}
                 height={350}
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: "300px", height: "300px" }}
               />
               <Typography
                 sx={{

@@ -101,7 +101,7 @@ const ShopPage = () => {
           <Grid key={prod.id}>
             <Card sx={{ borderRadius: 2, overflow: "hidden" }}>
               <CardMedia
-                component="img"
+                component="img" 
                 height="200"
                 image={prod.image}
                 alt={prod.name}

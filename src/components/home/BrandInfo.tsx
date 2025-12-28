@@ -37,7 +37,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import { brands } from "../../data/brands.data";
+import { brands } from "../../config/brands.config";
 // import { brands } from "../../data/brands.data";
 
 const BrandInfo = () => {
