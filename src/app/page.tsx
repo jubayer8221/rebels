@@ -2,7 +2,7 @@
 // import Navbar from "../components/layout/Navbar";
 import HeroSection from "../components/home/HeroSection";
 import CategorySection from "../components/home/CategorySection";
-import BrandInfo from "../components/home/BrandInfo";
+import ShopPage from "./shop/page";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       {/* <Navbar /> */}
       <HeroSection />
       <CategorySection />
-      <BrandInfo />
+      <ShopPage />
     </>
   );
 }
