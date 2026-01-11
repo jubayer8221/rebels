@@ -41,10 +41,17 @@ const NAV_ITEMS = [
     id: 2,
     label: "Shop",
     path: "/shop",
-    children: [{ id: 21, label: "New Arrivals", path: "/shop/new" }],
+    children: [
+      { id: 1, label: "New Arrivals", path: "/new-arrivals" },
+      { id: 2, label: "T-Shirt", path: "/category/tshirts" },
+      { id: 3, label: "Shirts", path: "/category/shirts" },
+      { id: 4, label: "Pants", path: "/category/pants" },
+      { id: 4, label: "jacket", path: "/category/jacket" },
+    ],
   },
-  { id: 3, label: "Collections", path: "/collections" },
+  { id: 3, label: "Collections", path: "/category" },
   { id: 4, label: "About", path: "/about" },
+  { id: 4, label: "contact", path: "/contact " },
 ];
 
 const Navbar = () => {
@@ -101,11 +108,10 @@ const Navbar = () => {
                     gap: 0.5,
                   }}
                 >
-                  <Box component="span" sx={{ fontSize: "1rem" }}>
-                    <LocationOn />
-                  </Box>{" "}
+                  <LocationOn sx={{ fontSize: "1rem" }} />
                   Khilkhet, Dhaka, Bangladesh
                 </Typography>
+
                 <Stack direction="row" spacing={3} sx={{ color: "#666" }}>
                   <Typography
                     variant="caption"
@@ -120,11 +126,28 @@ const Navbar = () => {
                     USD ⌵
                   </Typography>
                   <Divider orientation="vertical" flexItem sx={{ mx: 0.5 }} />
+
+                  {/* UPDATED LOGIN/SIGNUP LINKS */}
                   <Typography
                     variant="caption"
-                    sx={{ cursor: "pointer", fontWeight: 700, color: "#000" }}
+                    sx={{
+                      fontWeight: 700,
+                      color: "#000",
+                      "& a": {
+                        textDecoration: "none",
+                        color: "inherit",
+                        "&:hover": { color: "#666" },
+                      },
+                    }}
                   >
-                    Sign Up / Log In
+                    <Link href="/signup">Sign Up</Link>
+                    <Box
+                      component="span"
+                      sx={{ mx: 0.5, fontWeight: 400, color: "#ccc" }}
+                    >
+                      /
+                    </Box>
+                    <Link href="/login">Log In</Link>
                   </Typography>
                 </Stack>
               </Stack>
@@ -132,7 +155,6 @@ const Navbar = () => {
           </Box>
         </Collapse>
 
-        {/* 2. MIDDLE BAR */}
         {/* 2. MIDDLE BAR */}
         <Container maxWidth="xl">
           <Toolbar
@@ -316,6 +338,7 @@ const Navbar = () => {
         </Container>
 
         {/* 3. MAIN NAVIGATION BAR */}
+        {/* 3. MAIN NAVIGATION BAR */}
         <Box sx={{ bgcolor: "#000", display: { xs: "none", md: "block" } }}>
           <Container maxWidth="xl">
             <Stack
@@ -325,46 +348,102 @@ const Navbar = () => {
               sx={{ height: 50 }}
             >
               <Stack direction="row" spacing={1}>
-                {NAV_ITEMS.map((item) => (
-                  <Button
-                    key={item.id}
-                    component={Link}
-                    href={item.path}
-                    endIcon={
-                      item.children ? (
-                        <KeyboardArrowDownIcon sx={{ fontSize: 16 }} />
-                      ) : null
-                    }
-                    sx={{
-                      color:
-                        pathname === item.path
-                          ? "#fff"
-                          : "rgba(255,255,255,0.7)",
-                      fontWeight: 600,
-                      fontSize: "0.8rem",
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
-                      px: 2,
-                      position: "relative",
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        bottom: 8,
-                        left: "20%",
-                        width: pathname === item.path ? "60%" : "0%",
-                        height: "2px",
-                        bgcolor: "#fff",
-                        transition: "0.3s ease",
-                      },
-                      "&:hover": {
-                        color: "#fff",
-                        "&::after": { width: "60%" },
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
+                {NAV_ITEMS.map((item) => {
+                  const hasChildren = item.children && item.children.length > 0;
+
+                  return (
+                    <Box
+                      key={item.id}
+                      sx={{
+                        position: "relative",
+                        height: "50px",
+                        display: "flex",
+                        alignItems: "center",
+                        // This "&:hover .dropdown" selector triggers the visibility of the menu
+                        "&:hover .dropdown-menu": {
+                          visibility: "visible",
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                      }}
+                    >
+                      <Button
+                        component={Link}
+                        href={item.path}
+                        endIcon={
+                          hasChildren ? (
+                            <KeyboardArrowDownIcon sx={{ fontSize: 16 }} />
+                          ) : null
+                        }
+                        sx={{
+                          color:
+                            pathname === item.path
+                              ? "#fff"
+                              : "rgba(255,255,255,0.7)",
+                          fontWeight: 600,
+                          fontSize: "0.8rem",
+                          letterSpacing: "0.05em",
+                          textTransform: "uppercase",
+                          px: 2,
+                          height: "100%",
+                          borderRadius: 0,
+                          "&:hover": { color: "#fff", bgcolor: "transparent" },
+                        }}
+                      >
+                        {item.label}
+                      </Button>
+
+                      {/* DROPDOWN MENU */}
+                      {hasChildren && (
+                        <Box
+                          className="dropdown-menu"
+                          sx={{
+                            position: "absolute",
+                            top: "100%",
+                            left: 0,
+                            width: "200px",
+                            bgcolor: "#fff",
+                            boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                            visibility: "hidden",
+                            opacity: 0,
+                            transform: "translateY(10px)",
+                            transition: "all 0.2s ease-in-out",
+                            zIndex: 10,
+                            py: 1,
+                            borderRadius: "0 0 8px 8px",
+                            border: "1px solid #eee",
+                          }}
+                        >
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.id}
+                              href={child.path}
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Box
+                                sx={{
+                                  px: 3,
+                                  py: 1.5,
+                                  color: "#333",
+                                  fontSize: "0.85rem",
+                                  fontWeight: 500,
+                                  transition: "0.2s",
+                                  "&:hover": {
+                                    bgcolor: "#f5f5f5",
+                                    color: "#000",
+                                    pl: 3.5, // Subtle slide effect on hover
+                                  },
+                                }}
+                              >
+                                {child.label}
+                              </Box>
+                            </Link>
+                          ))}
+                        </Box>
+                      )}
+                    </Box>
+                  );
+                })}
               </Stack>
 
               <Stack
