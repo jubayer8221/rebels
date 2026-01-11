@@ -41,12 +41,12 @@ const ProductCard = ({ prod }: ProductCardProps) => {
           position: "relative",
           overflow: "hidden",
           bgcolor: "#f9f9f9",
-          aspectRatio: "3/4", // Professional fashion ratio
+          aspectRatio: "3/4",
           "&:hover .hover-overlay": { opacity: 1 },
           "&:hover img": { scale: "1.05" },
         }}
       >
-        {/* Badges */}
+        {/* Badges */}                  
         <Stack
           spacing={1}
           sx={{ position: "absolute", top: 12, left: 12, zIndex: 3 }}
