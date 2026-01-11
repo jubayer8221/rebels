@@ -43,7 +43,6 @@ const AllCategoriesPage = () => {
           sx={{
             display: "grid",
             gap: 3,
-            // 1 column on mobile, 2 on tablet, 4 on desktop
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, 1fr)",

@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     oldPrice: 1850,
     image:
       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1920",
-    category: "tshirts", // Matches /shop/tshirts
+    category: "tshirts",
     isNew: true,
     inStock: true,
     fit: "Oversized",
@@ -85,7 +85,7 @@ export const PRODUCTS: Product[] = [
     oldPrice: 6500,
     image:
       "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1920",
-    category: "jackets", // Matches /shop/jackets
+    category: "jackets",
     isNew: true,
     inStock: true,
     fit: "Regular",
@@ -99,7 +99,7 @@ export const PRODUCTS: Product[] = [
     price: 2800,
     image:
       "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1920",
-    category: "shirts", // Matches /shop/shirts
+    category: "shirts",
     isNew: false,
     inStock: true,
     fit: "Regular",
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
     oldPrice: 4200,
     image:
       "https://images.unsplash.com/photo-1624372927054-06d649980663?q=80&w=1920",
-    category: "pants", // Matches /shop/pants
+    category: "pants",
     isNew: false,
     inStock: true,
     fit: "Slim Fit",
