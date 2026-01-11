@@ -14,7 +14,7 @@ import { CATEGORIES } from "../../config/shop.config";
 
 const AllCategoriesPage = () => {
   return (
-    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 12, pb: 10 }}>
+    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 4, pb: 10 }}>
       <Container maxWidth="xl">
         {/* Header Section */}
         <Box sx={{ mb: 8, textAlign: "center" }}>

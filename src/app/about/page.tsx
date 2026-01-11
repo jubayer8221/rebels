@@ -5,7 +5,7 @@ import { Box, Typography, Container, Stack } from "@mui/material";
 
 const AboutPage = () => {
   return (
-    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 15, pb: 10 }}>
+    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 5, pb: 5 }}>
       <Container maxWidth="lg">
         {/* BIG MANIFESTO HEADER */}
         <Box sx={{ mb: 10 }}>

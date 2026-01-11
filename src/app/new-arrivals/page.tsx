@@ -30,8 +30,8 @@ const NewArrivalsPage = () => {
         sx={{
           bgcolor: "#f9f9f9",
           borderBottom: "1px solid #eee",
-          pt: { xs: 15, md: 20 },
-          pb: { xs: 10, md: 15 },
+          pt: { xs: 3, md: 5 },
+          pb: { xs: 3, md: 5 },
           textAlign: "center",
           position: "relative",
         }}

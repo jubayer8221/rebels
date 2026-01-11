@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const BrandInfo = () => {
   return (
-    <Box sx={{ py: 10 }}>
+    <Box sx={{ py: 5 }}>
       <Container maxWidth="xl">
         {/* Section Header */}
         <Box

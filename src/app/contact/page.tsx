@@ -12,7 +12,7 @@ import {
 
 const ContactPage = () => {
   return (
-    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 15, pb: 10 }}>
+    <Box sx={{ bgcolor: "#fff", minHeight: "100vh", pt: 5, pb: 5 }}>
       <Container maxWidth="md">
         <Box sx={{ textAlign: "center", mb: 8 }}>
           <Typography

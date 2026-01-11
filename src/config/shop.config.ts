@@ -41,10 +41,25 @@ const HIGH_QUALITY_IMAGE =
   "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1920";
 
 export const CATEGORIES: Category[] = [
-  { id: 1, name: "Shirts", image: HIGH_QUALITY_IMAGE, path: "/shop/shirts" },
-  { id: 2, name: "T-Shirts", image: HIGH_QUALITY_IMAGE, path: "/shop/tshirts" },
-  { id: 3, name: "Pants", image: HIGH_QUALITY_IMAGE, path: "/shop/pants" },
-  { id: 4, name: "Jackets", image: HIGH_QUALITY_IMAGE, path: "/shop/jackets" },
+  {
+    id: 1,
+    name: "Shirts",
+    image: HIGH_QUALITY_IMAGE,
+    path: "/category/tshirts",
+  },
+  {
+    id: 2,
+    name: "T-Shirts",
+    image: HIGH_QUALITY_IMAGE,
+    path: "/category/tshirts",
+  },
+  { id: 3, name: "Pants", image: HIGH_QUALITY_IMAGE, path: "/category/pants" },
+  {
+    id: 4,
+    name: "Jackets",
+    image: HIGH_QUALITY_IMAGE,
+    path: "/category/jackets",
+  },
 ];
 
 export const PRODUCTS: Product[] = [
